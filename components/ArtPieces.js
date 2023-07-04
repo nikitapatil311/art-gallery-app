@@ -1,20 +1,28 @@
-// import Image from "next/image";
+//import Image from "next/image";
+//import HomePage from "../pages";
+import ArtPiecesPreview from "./ArtPiecesPreview";
+import SpotLight from "./SpotLight";
+import { pickRandomPiece } from "./SpotLight";
 
-// export default function ArtPieces({ pieces }) {
-//   return <>
-//     {/* <ul>
-//         {data.map(({ artist, imageSource, name }) => (
-//           <li key={name}>
-//             <h1>{name}</h1>
-//             <br />
-//             <p>
-//               Artist: <h2> {artist}</h2>
-//             </p>
-
-//             <br />
-//             <p>Image:</p>
-//             <Image src={imageSource} alt={name} width={140} height={230} />
-//           </li>
-//         ))}
-//       </ul></> */}
-// }
+export default function ArtPieces({ pieces }) {
+  const randomPiece = pickRandomPiece(pieces);
+  return (
+    <>
+      <ul>
+        <SpotLight
+          artist={randomPiece.artist}
+          imageSource={randomPiece.imageSource}
+        />
+        {pieces.map(({ artist, imageSource, name }) => (
+          <ArtPiecesPreview
+            key={name}
+            title={name}
+            artist={artist}
+            imageSource={imageSource}
+            //  <Image src={imageSource} alt={name} width={140} height={230} />
+          />
+        ))}
+      </ul>
+    </>
+  );
+}
