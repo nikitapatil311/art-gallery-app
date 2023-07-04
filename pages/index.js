@@ -1,3 +1,5 @@
+import useSWR from "swr";
+
 export default function HomePage() {
   return (
     <div>
