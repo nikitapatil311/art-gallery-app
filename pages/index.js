@@ -1,41 +1,20 @@
-import useSWR from "swr";
-import ArtPieces from "../components/ArtPieces";
-// import Image from "next/image";
-// import ArtPiecesPreview from "../components/ArtPiecesPreview";
 import SpotLight from "../components/SpotLight";
+import React from "react";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
-export default function HomePage() {
-  const { data, error, isLoading } = useSWR(
-    "https://example-apis.vercel.app/api/art",
-    fetcher
-  );
-  console.log(data);
-
-  if (error) return <div>failed to load</div>;
-  if (isLoading) return <div>loading...</div>;
+export default function SpotlightPage({ pieces }) {
+  const spotlightPiece = pieces[Math.floor(Math.random() * pieces.length)];
 
   return (
-    <div>
-      <ArtPieces pieces={data} />
-      <SpotLight />
-
-      {/* <ul>
-        {data.map(({ artist, imageSource, name }) => (
-          <li key={name}>
-            <h1>{name}</h1>
-            <br />
-            <p>
-              Artist: <h2> {artist}</h2>
-            </p>
-
-            <br />
-            <p>Image:</p>
-            <Image src={imageSource} alt={name} width={140} height={230} />
-          </li>
-        ))}
-      </ul> */}
-    </div>
+    <>
+      <h1> Art Gallery</h1>
+      <div>
+        {spotlightPiece && (
+          <SpotLight
+            imageSource={spotlightPiece.imageSource}
+            artist={spotlightPiece.artist}
+          />
+        )}
+      </div>
+    </>
   );
 }
