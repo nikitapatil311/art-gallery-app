@@ -1,7 +1,8 @@
 import useSWR from "swr";
 import ArtPieces from "../components/ArtPieces";
-import Image from "next/image";
-import ArtPiecesPreview from "../components/ArtPiecesPreview";
+// import Image from "next/image";
+// import ArtPiecesPreview from "../components/ArtPiecesPreview";
+import SpotLight from "../components/SpotLight";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -18,6 +19,8 @@ export default function HomePage() {
   return (
     <div>
       <ArtPieces pieces={data} />
+      <SpotLight />
+
       {/* <ul>
         {data.map(({ artist, imageSource, name }) => (
           <li key={name}>
