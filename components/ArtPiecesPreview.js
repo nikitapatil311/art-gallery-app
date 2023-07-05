@@ -1,10 +1,22 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-export default function ArtPiecesPreview({ imageSource, title, artist, slug }) {
+import FavoriteButton from "./FavoriteButton";
+export default function ArtPiecesPreview({
+  imageSource,
+  title,
+  artist,
+  slug,
+  isFavorite,
+  onToggleFavorite,
+}) {
   return (
     <div>
       <h1>{title}</h1>
+      <FavoriteButton
+        isFavorite={isFavorite}
+        onToggleFavorite={onToggleFavorite}
+      />
       <p>
         Artist: <strong>{artist}</strong>
       </p>

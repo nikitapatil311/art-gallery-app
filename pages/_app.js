@@ -11,8 +11,8 @@
 
 import GlobalStyle from "../styles";
 import useSWR from "swr";
-
 import { Layout } from "../components/Navigation";
+import { useState } from "react";
 // import Image from "next/image";
 // import ArtPiecesPreview from "../components/ArtPiecesPreview";
 //import SpotLight from "./components/Navigation/SpotLight";
