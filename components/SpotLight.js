@@ -2,21 +2,59 @@ import Image from "next/image";
 //import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
 //import ArtPieces from "./ArtPieces";
+import styled from "styled-components";
 
-export default function SpotLight({ imageSource, artist }) {
+const H1 = styled.h1`
+  display: flex;
+  color: #988265;
+  justify-content: center;
+`;
+
+const LI = styled.li`
+  list-style: none;
+  font-size: 30px;
+  font-family: cursive;
+  color: darkgreen;
+  font-weight: bolder;
+`;
+
+const Div = styled.div`
+  height: 900px;
+  width: 700px;
+  border-radius: 30px;
+  background-color: beige;
+  height: 900px;
+  width: 700px;
+  border-radius: 30px;
+  margin-left: 35%;
+`;
+
+export default function SpotLight({
+  imageSource,
+  artist,
+  isFavorite,
+  slug,
+  onToggleFavorite,
+  artPiece,
+}) {
   return (
-    <>
-      <h1>Random SpotLight Images</h1>
-      <FavoriteButton />
+    <Div>
+      <H1>Random SpotLight Images</H1>
+      <FavoriteButton
+        onToggleFavorite={onToggleFavorite}
+        slug={slug}
+        artPiece={artPiece}
+        isFavorite={isFavorite}
+      />
       <ul>
-        <li>
+        <LI>
           <p>Image:</p>
-          <Image src={imageSource} alt={artist} width={140} height={230} />
+          <Image src={imageSource} alt={artist} width={600} height={600} />
           <p>
             Artist: <strong>{artist}</strong>
           </p>
-        </li>
+        </LI>
       </ul>
-    </>
+    </Div>
   );
 }

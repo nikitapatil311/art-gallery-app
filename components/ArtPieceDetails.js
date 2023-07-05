@@ -9,13 +9,20 @@ export default function ArtPieceDetails({
   artist,
   year,
   genre,
+  slug,
+  isFavorite,
+  onToggleFavorite,
 }) {
   //   const router = useRouter();
 
   return (
     <>
       <div>
-        <FavoriteButton />
+        <FavoriteButton
+          isFavorite={isFavorite}
+          slug={slug}
+          onToggleFavorite={onToggleFavorite}
+        />
         <Image
           priority
           src={imageSource}
