@@ -10,5 +10,6 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: system-ui;
+    background-color: #7c9cb8;
   }
 `;

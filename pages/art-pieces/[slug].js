@@ -12,12 +12,14 @@ export default function ArtPiecesDetailPage({ pieces }) {
   //console.log(pieces);
 
   return (
-    <ArtPieceDetails
-      imageSource={piece.imageSource}
-      title={piece.name}
-      artist={piece.artist}
-      year={piece.year}
-      genre={piece.genre}
-    />
+    <>
+      <ArtPieceDetails
+        imageSource={piece.imageSource}
+        title={piece.name}
+        artist={piece.artist}
+        year={piece.year}
+        genre={piece.genre}
+      />
+    </>
   );
 }

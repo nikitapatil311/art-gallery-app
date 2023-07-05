@@ -2,6 +2,35 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
+import styled from "styled-components";
+
+const DIV = styled.div``;
+const H1 = styled.h1`
+  color: crimson;
+  background-color: cornsilk;
+  border-radius: 20px;
+`;
+
+const P = styled.p`
+  font-size: 30px;
+  color: color: crimson;;
+  font-family: monospace;
+  display: inline-grid;
+`;
+
+const IMG = styled.img`
+  border-radius: 200px;
+`;
+
+const A = styled.a`
+  font-size: 40px;
+  margin-left: 40%;
+  list-style: none;
+  text-decoration: none;
+  color: crimson;
+  font-family: cursive;
+`;
+
 export default function ArtPiecesPreview({
   imageSource,
   title,
@@ -11,20 +40,20 @@ export default function ArtPiecesPreview({
   onToggleFavorite,
 }) {
   return (
-    <div>
-      <h1>{title}</h1>
+    <DIV>
+      <H1>{title}</H1>
       <FavoriteButton
+        slug={slug}
         isFavorite={isFavorite}
         onToggleFavorite={onToggleFavorite}
       />
-      <p>
+      <P>
         Artist: <strong>{artist}</strong>
-      </p>
+      </P>
 
-      <p>Image:</p>
-      <Image priority src={imageSource} alt={title} width={130} height={210} />
+      <IMG priority src={imageSource} alt={title} width={600} height={600} />
 
-      <Link href={`/art-pieces/${slug}`}>Art Pieces Details</Link>
-    </div>
+      <A href={`/art-pieces/${slug}`}>Art Pieces Details</A>
+    </DIV>
   );
 }
