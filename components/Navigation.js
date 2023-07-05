@@ -8,6 +8,12 @@ const H1 = styled.h1`
   font-family: cursive;
   color: black;
   margin-left: 10%;
+  cursor: pointer;
+
+  &:hover {
+    color: orange;
+    font-size: 40px;
+  }
 `;
 
 const A = styled.a`
@@ -36,10 +42,10 @@ const LI = styled.li`
   color: currentColor;
   border-radius: 20px;
 
-  &hover {
+  &:hover {
     transition: 2s;
     font-size: xx-large;
-    color: blueviolet;
+    color: orange;
   }
 `;
 

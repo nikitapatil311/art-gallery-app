@@ -20,6 +20,12 @@ const P = styled.p`
 
 const IMG = styled.img`
   border-radius: 200px;
+
+  &:hover {
+    transform-style: unset;
+    transition-delay: 3s;
+    font-size: 500px;
+  }
 `;
 
 const A = styled.a`
