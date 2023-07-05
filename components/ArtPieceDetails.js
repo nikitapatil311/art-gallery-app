@@ -1,6 +1,7 @@
 //import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import FavoriteButton from "./FavoriteButton";
 
 export default function ArtPieceDetails({
   imageSource,
@@ -14,6 +15,7 @@ export default function ArtPieceDetails({
   return (
     <>
       <div>
+        <FavoriteButton />
         <Image
           priority
           src={imageSource}
