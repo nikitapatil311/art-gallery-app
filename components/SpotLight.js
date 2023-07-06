@@ -26,7 +26,7 @@ const Div = styled.div`
   height: 900px;
   width: 700px;
   border-radius: 30px;
-  margin-left: 35%;
+  margin-left: 10%;
 `;
 
 export default function SpotLight({
