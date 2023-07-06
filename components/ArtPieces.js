@@ -1,7 +1,7 @@
 import ArtPiecesPreview from "./ArtPiecesPreview";
 import { useState } from "react";
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces, handleArtPiecesSubmit }) {
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
   const toggleFavorite = (slug) => {
